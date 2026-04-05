@@ -2,6 +2,7 @@ import type { Request, Response } from "express";
 import { sendError, sendSuccess } from "../utils/apiResponse.js";
 import { prisma } from "../config/db.js";
 import bcrypt from 'bcrypt';
+import { generateToken } from "../utils/generateToken.js";
 
 const register = async (req: Request, res: Response) => {
     const { username, email, password } = req.body;
@@ -32,12 +33,15 @@ const register = async (req: Request, res: Response) => {
         }
     });
 
+    const token = generateToken(user.id, res);
+
     sendSuccess(res, {
         user: {
             id: user.id,
             username: username,
             email: email
-        }
+        },
+        token
     }, 201)
 }
 
@@ -62,11 +66,14 @@ const login = async (req: Request, res: Response) => {
         return sendError(res, "Invalid email or password", 401);
     }
 
+    const token = generateToken(user.id, res);
+
     return sendSuccess(res, {
         user: {
             id: user.id,
             email: email
-        }
+        },
+        token
     }, 200);
 }
 
