@@ -35,10 +35,39 @@ const register = async (req: Request, res: Response) => {
     sendSuccess(res, {
         user: {
             id: user.id,
-            username:  username,
+            username: username,
             email: email
         }
     }, 201)
 }
 
-export { register };
+const login = async (req: Request, res: Response) => {
+    const { email, password } = req.body ?? {};
+
+    if (!email || !password) {
+        return sendError(res, "Email and password are required", 400);
+    }
+
+    const user = await prisma.user.findUnique({
+        where: { email: email}
+    });
+
+    if (!user) {
+        return sendError(res, "Invalid email or password", 401);
+    }
+
+    const isPasswordValid = await bcrypt.compare(password, user.passwordHash);
+
+    if (!isPasswordValid) {
+        return sendError(res, "Invalid email or password", 401);
+    }
+
+    return sendSuccess(res, {
+        user: {
+            id: user.id,
+            email: email
+        }
+    }, 200);
+}
+
+export { register, login };
