@@ -3,17 +3,20 @@ import dotenv from 'dotenv';
 import { connectDB, disconnectDB } from './config/db.js';
 
 dotenv.config();
-connectDB();
+await connectDB();
 
 import userRoutes from './routes/userRoutes.js';
+import authRoutes from './routes/authRoutes.js';
 
 const app = express();
 const API_BASE = '/api/v1'
 
 app.use(express.json());
+app.use(express.urlencoded({extended: true}));
 
 // API routes
 app.use(`${API_BASE}/users`, userRoutes);
+app.use(`${API_BASE}/auth`, authRoutes);
 
 const server = app.listen(process.env.PORT, () => {
     console.log(`Server running on PORT ${process.env.PORT}`)
