@@ -1,9 +1,6 @@
 import type { Request, Response } from "express";
 import { sendError, sendSuccess } from "../utils/apiResponse.js";
-import { prisma } from "../config/db.js";
-import bcrypt from 'bcrypt';
 import { generateToken, getJwtCookieOptions } from "../utils/generateToken.js";
-import { toAuthUserDto } from "../utils/auth.js";
 import { authService, AuthServiceError } from "../services/authService.js";
 
 const register = async (req: Request, res: Response) => {

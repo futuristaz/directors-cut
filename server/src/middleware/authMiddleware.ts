@@ -1,6 +1,5 @@
 import jwt, { type Secret } from "jsonwebtoken";
 import type { JwtPayload } from "jsonwebtoken";
-import { prisma } from "../config/db.js"
 import type { Request, Response, NextFunction } from "express";
 import { sendError } from "../utils/apiResponse.js";
 import { userService } from "../services/userService.js";
