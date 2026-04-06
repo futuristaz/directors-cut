@@ -27,7 +27,7 @@ export const getJwtCookieOptions = (): CookieOptions => {
     }
 }
 
-export const generateToken = (userId: string, res: Response): string => {
+export const generateToken = (userId: string): string => {
     const secret = process.env.JWT_SECRET;
 
     if (!secret) {
@@ -36,9 +36,5 @@ export const generateToken = (userId: string, res: Response): string => {
 
     const expiresIn = getJwtExpiresIn();
 
-    const token = jwt.sign({ id: userId }, secret as Secret, { expiresIn })
-
-    res.cookie("jwt", token, getJwtCookieOptions());
-
-    return token;
+    return jwt.sign({ id: userId }, secret as Secret, { expiresIn });
 };
