@@ -105,4 +105,17 @@ const logout = async (req: Request, res: Response) => {
     }
 }
 
-export { register, login, logout };
+const me = async (req: Request, res: Response) => {
+    try {
+        if (!req.user) {
+            return sendError(res, "Not authorized", 401);
+        }
+
+        return sendSuccess(res, { user: req.user }, 200);
+    } catch (error) {
+        console.error(error);
+        return sendError(res, "Failed to load user", 500);
+    }
+};
+
+export { register, login, logout, me };
