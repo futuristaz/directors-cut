@@ -3,6 +3,7 @@ import { sendError, sendSuccess } from "../utils/apiResponse.js";
 import { prisma } from "../config/db.js";
 import bcrypt from 'bcrypt';
 import { generateToken, getJwtCookieOptions } from "../utils/generateToken.js";
+import { toAuthUserDto } from "../utils/auth.js";
 
 const register = async (req: Request, res: Response) => {
     try {
@@ -42,11 +43,7 @@ const register = async (req: Request, res: Response) => {
         const token = generateToken(user.id, res);
 
         sendSuccess(res, {
-            user: {
-                id: user.id,
-                username: username,
-                email: email
-            },
+            user: toAuthUserDto(user),
             token
         }, 201)
     } catch (error) {
@@ -81,10 +78,7 @@ const login = async (req: Request, res: Response) => {
         const token = generateToken(user.id, res);
 
         return sendSuccess(res, {
-            user: {
-                id: user.id,
-                email: email
-            },
+            user: toAuthUserDto(user),
             token
         }, 200);
     } catch (error) {
@@ -111,7 +105,7 @@ const me = async (req: Request, res: Response) => {
             return sendError(res, "Not authorized", 401);
         }
 
-        return sendSuccess(res, { user: req.user }, 200);
+        return sendSuccess(res, { user: toAuthUserDto(req.user) }, 200);
     } catch (error) {
         console.error(error);
         return sendError(res, "Failed to load user", 500);
