@@ -11,7 +11,7 @@ const register = async (req: Request, res: Response) => {
         const result = await authService.register(req.body);
         const token = generateToken(result.tokenPayload.userId);
 
-        res.cookie('jwt', getJwtCookieOptions());
+        res.cookie("jwt", token, getJwtCookieOptions());
 
         return sendSuccess(
             res, {
