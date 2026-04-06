@@ -18,8 +18,17 @@ app.use(cookieParser());
 // API routes
 app.use(`${API_BASE}/auth`, authRoutes);
 
-const server = app.listen(process.env.PORT, () => {
-    console.log(`Server running on PORT ${process.env.PORT}`)
+const DEFAULT_PORT = 3000;
+const parsedPort = Number.parseInt(process.env.PORT ?? "", 10);
+
+const port = Number.isInteger(parsedPort) &&
+    parsedPort > 0 &&
+    parsedPort <= 65535
+        ? parsedPort
+        : DEFAULT_PORT; 
+
+const server = app.listen(port, () => {
+    console.log(`Server running on PORT ${port}`)
 });
 
 process.on("unhandledRejection", (err) => {
