@@ -26,7 +26,7 @@ const register = async (req: Request, res: Response) => {
             return sendError(res, error.message, error.statusCode);
         }
 
-        return sendError(res, "Login failed", 500);
+        return sendError(res, "Registration failed", 500);
     }
 }
 
