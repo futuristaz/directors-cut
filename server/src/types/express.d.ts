@@ -1,15 +1,9 @@
-import type { User } from "@prisma/client"
+import type { RequestUser } from "./requestUser.ts";
 
 declare global {
     namespace Express {
         interface Request {
-            user?: {
-                id: string,
-                username: string,
-                email: string,
-                createdAt: Date,
-                updatedAt: Date
-            }
+            user?: RequestUser
         }
     }
 }

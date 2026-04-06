@@ -1,8 +1,8 @@
 import jwt, { type Secret } from "jsonwebtoken";
 import type { JwtPayload } from "jsonwebtoken";
-import { prisma } from "../config/db.js"
 import type { Request, Response, NextFunction } from "express";
 import { sendError } from "../utils/apiResponse.js";
+import { userService } from "../services/userService.js";
 
 export const authMiddleware = async (req: Request, res: Response, next: NextFunction) => {
     let token: string | undefined;
@@ -26,16 +26,7 @@ export const authMiddleware = async (req: Request, res: Response, next: NextFunc
 
         const decoded = jwt.verify(token, jwtSecret as Secret) as JwtPayload & { id: string };
 
-        const user = await prisma.user.findUnique({
-            where: {id: decoded.id},
-            select: {
-                id: true,
-                username: true,
-                email: true,
-                createdAt: true,
-                updatedAt: true
-            }
-        });
+        const user = await userService.findAuthUserById(decoded.id)
 
         if (!user) {
             return sendError(res, "User no longer exists", 401);
