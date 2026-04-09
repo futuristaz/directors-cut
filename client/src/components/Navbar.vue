@@ -17,7 +17,7 @@
 
         <!-- RIGHT: Auth Buttons -->
         <div class="flex items-center gap-4">
-          <a href="#" class="text-on-surface font-label text-sm hover:text-primary transition-colors">Sign In</a>
+          <a href="#" class="text-on-surface font-label text-sm hover:text-primary transition-colors">Log in</a>
           <a href="#"
             class="bg-primary-container text-white font-label text-sm font-semibold px-5 py-2 rounded-md hover:opacity-90 transition-opacity">
             Join Now

@@ -1,5 +1,6 @@
 <script setup>
 import heroBackdrop from '../assets/img/hero-backdrop.jpeg'
+import HighlightCta from './HighlightCta.vue';
 </script>
 
 <template>
@@ -16,13 +17,19 @@ import heroBackdrop from '../assets/img/hero-backdrop.jpeg'
         <div class="absolute inset-x-0 bottom-0 h-24 bg-linear-to-t from-surface to-transparent"></div>
 
         <div class="absolute inset-0 flex flex-col items-start justify-center px-16">
-            <h1 class="font-headline text-8xl font-extrabold text-on-surface leading-none">
+            <h1 class="font-headline text-[5.5rem] font-extrabold text-on-surface leading-none tracking-tighter">
                 EVERY FRAME<br />MATTERS.
             </h1>
-            <h1 class="font-headline text-8xl font-extrabold text-primary-container leading-none mt-4"
+            <h1 class="font-headline text-[5.5rem] font-extrabold text-primary-container leading-none mt-4 tracking-tighter"
                 style="filter: drop-shadow(0 0 30px #E50914aa);">
                 TRACK YOUR<br />JOURNEY.
             </h1>
+            <p class="font-body text-xl text-primary mt-4">
+                Join a community of film enthusiasts. Rate, review and <br /> curate your private screening collection with editorial precision.
+            </p>
+            <div class="mt-4">
+                <HighlightCta class="" text="Join Now"/>
+            </div>
         </div>
     </section>
 </template>
