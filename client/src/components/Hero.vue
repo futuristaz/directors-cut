@@ -8,7 +8,7 @@ import HighlightCta from './HighlightCta.vue';
         <img :src="heroBackdrop" alt="Hero backdrop" class="w-full object-cover" />
 
         <!-- dim overlay -->
-        <div class="absolute inset-0 bg-surface opacity-60"></div>
+        <div class="absolute inset-0 bg-surface opacity-75"></div>
 
         <!-- fade top -->
         <div class="absolute inset-x-0 top-0 h-24 bg-linear-to-b from-surface to-transparent"></div>
