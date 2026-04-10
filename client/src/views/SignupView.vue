@@ -1,19 +1,12 @@
 <script setup>
-import InputField from '@/components/shared/InputField.vue';
-
+import SignupHero from '@/components/signup/SignupHero.vue';
+import SignupForm from '@/components/signup/SignupForm.vue';
 </script>
 
 <template>
-    <div class="bg-surface min-h-screen px-5 py-5 flex-col flex gap-5">
-        <InputField label="Username" v-model="username" placeholder="Enter your username">
-            <template #icon>
-                <i class="pi pi-user"></i>
-            </template>
-        </InputField>
-        <InputField label="Email" v-model="email" placeholder="you@example.com">
-            <template #icon>
-                <i class="pi pi-envelope"></i>
-            </template>
-        </InputField>
+    <div class="bg-surface h-screen flex flex-row">
+        <SignupHero />
+        <SignupForm />
     </div>
 </template>
+
