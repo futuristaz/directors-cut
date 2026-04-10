@@ -28,7 +28,7 @@ import HighlightCta from '../shared/HighlightCta.vue';
                 Join a community of film enthusiasts. Rate, review and <br /> curate your private screening collection with editorial precision.
             </p>
             <div class="mt-4">
-                <HighlightCta class="" text="Join Now"/>
+                <HighlightCta class="hover:opacity-90 transition-opacity" text="Join Now" href="/signup"/>
             </div>
         </div>
     </section>

@@ -30,7 +30,7 @@ const password = ref('')
                         <i class="pi pi-lock"></i>
                     </template>
                 </InputField>
-                <HighlightCta text="BEGIN YOUR JOURNEY"/>
+                <HighlightCta class="hover:opacity-90 transition-opacity" text="BEGIN YOUR JOURNEY"/>
                 <p class="font-body text-on-surface-variant text-sm text-center">
                     Already have an account? <a href="/login" class="text-primary-container font-body font-bold hover:opacity-90 transition-opacity">LOG IN</a>
                 </p>
