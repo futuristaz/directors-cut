@@ -1,6 +1,6 @@
 <script setup>
-import heroBackdrop from '../assets/img/hero-backdrop.jpeg'
-import HighlightCta from './HighlightCta.vue';
+import heroBackdrop from '../../assets/img/hero-backdrop.jpeg'
+import HighlightCta from '../shared/HighlightCta.vue';
 </script>
 
 <template>

@@ -8,9 +8,9 @@
 
         <!-- LEFT: Logo + Nav Links -->
         <div class="flex items-baseline gap-8">
-          <span class="text-2xl font-bold text-primary-container font-headline tracking-tight leading-none">
-            DIRECTOR'S CUT
-          </span>
+          <a href="/" class="text-2xl font-bold text-primary-container font-headline tracking-tight leading-none hover:opacity-90 transition-opacity">
+              DIRECTOR'S CUT
+          </a>
           <a href="#" class="text-on-surface font-body text-sm hover:text-primary transition-colors">Features</a>
           <a href="#" class="text-on-surface font-body text-sm hover:text-primary transition-colors">Trending</a>
         </div>
@@ -18,7 +18,7 @@
         <!-- RIGHT: Auth Buttons -->
         <div class="flex items-center gap-4">
           <a href="#" class="text-on-surface font-label text-sm hover:text-primary transition-colors">Log in</a>
-          <a href="#"
+          <a href="/signup"
             class="bg-primary-container text-white font-label text-sm font-semibold px-5 py-2 rounded-md hover:opacity-90 transition-opacity">
             Join Now
           </a>
