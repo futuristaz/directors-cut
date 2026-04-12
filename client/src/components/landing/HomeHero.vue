@@ -4,7 +4,7 @@ import HighlightCta from '../shared/HighlightCta.vue';
 </script>
 
 <template>
-    <section class="relative max-h-screen overflow-hidden">
+    <section class="relative max-h-screen overflow-hidden bg-surface">
         <img :src="heroBackdrop" alt="Hero backdrop" class="w-full object-cover" />
 
         <!-- dim overlay -->

@@ -5,6 +5,10 @@ import Footer from './components/shared/Footer.vue';
 
 <template>
   <Navbar />
-  <RouterView />
+  <RouterView v-slot="{ Component }">
+    <Transition name="fade" mode="out-in">
+      <component :is="Component" :key="$route.path" />
+    </Transition>
+  </RouterView>
   <Footer />
-</template> 
+</template>

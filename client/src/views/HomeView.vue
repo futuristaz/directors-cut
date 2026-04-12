@@ -3,5 +3,7 @@ import HomeHero from '../components/landing/HomeHero.vue';
 </script>
 
 <template>
-  <HomeHero />
-</template> 
+  <div class="bg-surface min-h-screen">
+    <HomeHero />
+  </div>
+</template>
