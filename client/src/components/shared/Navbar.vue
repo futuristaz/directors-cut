@@ -10,16 +10,16 @@ import HighlightCta from './HighlightCta.vue';
 
         <!-- LEFT: Logo + Nav Links -->
         <div class="flex items-baseline gap-8">
-          <a href="/" class="text-2xl font-bold text-primary-container font-headline tracking-tight leading-none hover:opacity-90 transition-opacity">
+          <RouterLink to="/" class="text-2xl font-bold text-primary-container font-headline tracking-tight leading-none hover:opacity-90 transition-opacity">
               DIRECTOR'S CUT
-          </a>
+          </RouterLink>
           <a href="#" class="text-on-surface font-body text-sm hover:text-primary transition-colors">Features</a>
           <a href="#" class="text-on-surface font-body text-sm hover:text-primary transition-colors">Trending</a>
         </div>
 
         <!-- RIGHT: Auth Buttons -->
         <div class="flex items-center gap-4">
-          <a href="/login" class="text-on-surface font-label text-sm hover:text-primary transition-colors">Log in</a>
+          <RouterLink to="/login" class="text-on-surface font-label text-sm hover:text-primary transition-colors">Log in</RouterLink>
           <HighlightCta href="/signup" text="Join Now"/>
         </div>
       </div>

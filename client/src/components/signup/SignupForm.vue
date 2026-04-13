@@ -63,9 +63,9 @@ const handleSubmit = async () => {
                 <HighlightCta class="hover:opacity-90 transition-opacity" text="BEGIN YOUR JOURNEY"
                     @submit="handleSubmit" />
                 <p class="font-body text-on-surface-variant text-sm text-center">
-                    Already have an account? <a href="/login"
+                    Already have an account? <RouterLink to="/login"
                         class="text-primary-container font-body font-bold hover:opacity-90 transition-opacity">LOG
-                        IN</a>
+                        IN</RouterLink>
                 </p>
             </div>
         </div>
