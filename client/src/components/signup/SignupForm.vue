@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-import register from '@/api/auth.js'
+import { register } from '@/api/auth.js'
 import InputField from '@/components/shared/InputField.vue'
 import HighlightCta from '../shared/HighlightCta.vue'
 import router from '@/router'
@@ -27,7 +27,7 @@ const handleSubmit = async () => {
 
     try {
         const data = await register(username.value, email.value, password.value)
-        router.push('/')
+        router.push('/home')
     } catch (e) {
         error.value = e.message
     }
@@ -57,7 +57,7 @@ const handleSubmit = async () => {
                         <i class="pi pi-lock"></i>
                     </template>
                 </InputField>
-                <p class="font-body text-on-surface-variant text-sm text-center">
+                <p class="font-body text-error text-sm text-center">
                     {{ error }}
                 </p>
                 <HighlightCta class="hover:opacity-90 transition-opacity" text="BEGIN YOUR JOURNEY"

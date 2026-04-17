@@ -1,21 +1,16 @@
 <script setup>
 import { ref } from 'vue'
-import register from '@/api/auth.js'
+import { login } from '@/api/auth.js'
 import InputField from '@/components/shared/InputField.vue'
 import HighlightCta from '../shared/HighlightCta.vue'
 import router from '@/router'
 
-const username = ref('')
 const email = ref('')
 const password = ref('')
 
 const error = ref('')
 
 const handleSubmit = async () => {
-    if (!username.value) {
-        error.value = 'Username is required'
-        return
-    }
     if (!email.value) {
         error.value = 'Email is required'
         return
@@ -26,8 +21,8 @@ const handleSubmit = async () => {
     }
 
     try {
-        const data = await register(username.value, email.value, password.value)
-        router.push('/')
+        const data = await login(email.value, password.value)
+        router.push('/home')
     } catch (e) {
         error.value = e.message
     }
@@ -72,7 +67,7 @@ const handleSubmit = async () => {
 
                     <p v-if="error" class="text-error text-sm font-body text-center">{{ error }}</p>
 
-                    <HighlightCta text="Enter the Gallery" class="w-full" @submit="handleSubmit" />
+                    <HighlightCta text="Enter the Gallery" class="w-full uppercase" @submit="handleSubmit" />
                 </div>
 
                 <div class="mt-10 border-t border-outline-variant/10 text-center">

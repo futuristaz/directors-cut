@@ -26,7 +26,7 @@ import HighlightCta from '@/components/shared/HighlightCta.vue';
                     The page you are looking for has been removed from the final edit or never existed in the script.
                 </p>
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
-                    <HighlightCta href="/" text="Back to Home"/>
+                    <HighlightCta to="/" text="Back to Home"/>
                 </div>
             </div>
         </div>

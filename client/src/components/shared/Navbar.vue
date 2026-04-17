@@ -20,7 +20,7 @@ import HighlightCta from './HighlightCta.vue';
         <!-- RIGHT: Auth Buttons -->
         <div class="flex items-center gap-4">
           <RouterLink to="/login" class="text-on-surface font-label text-sm hover:text-primary transition-colors">Log in</RouterLink>
-          <HighlightCta href="/signup" text="Join Now"/>
+          <HighlightCta to="/signup" text="Join Now"/>
         </div>
       </div>
     </div>

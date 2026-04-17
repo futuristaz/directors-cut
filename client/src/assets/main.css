@@ -30,6 +30,8 @@
 
   /* Outline */
   --color-outline-variant: #5E3F3B;
+
+  --color-error: #FFB4AB;
 }
 .fade-enter-active, .fade-leave-active {
   transition: opacity 0.15s ease;

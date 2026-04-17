@@ -1,5 +1,5 @@
 <script setup>
-import LoginForm from '@/components/login/LoginForm.vue';
+import HomeHero from '../components/landing/HomeHero.vue';
 import { useAuth } from '@/stores/auth'
 import { watchEffect } from 'vue'
 import { useRouter } from 'vue-router'
@@ -15,5 +15,7 @@ watchEffect(() => {
 </script>
 
 <template>
-    <LoginForm />
+  <div class="bg-surface min-h-screen">
+    <HomeHero />
+  </div>
 </template>
