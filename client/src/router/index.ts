@@ -11,8 +11,8 @@ const router = createRouter({
     { path: '/',name: 'LandingHome', component: LandingView },
     { path: '/signup', name: 'Signup', component: SignupView },
     { path: '/login', name: 'Login', component: LoginView },
-    { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFoundView },
-    { path: '/home', name: 'Home', component: HomeView }
+    { path: '/home', name: 'Home', component: HomeView },
+    { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFoundView }
   ],
 })
 
