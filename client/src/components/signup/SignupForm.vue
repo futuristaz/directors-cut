@@ -4,12 +4,14 @@ import { register } from '@/api/auth.js'
 import InputField from '@/components/shared/InputField.vue'
 import HighlightCta from '../shared/HighlightCta.vue'
 import router from '@/router'
+    import { useAuth } from '@/stores/auth'
 
 const username = ref('')
 const email = ref('')
 const password = ref('')
 
 const error = ref('')
+const { setUser } = useAuth()
 
 const handleSubmit = async () => {
     if (!username.value) {
@@ -27,6 +29,7 @@ const handleSubmit = async () => {
 
     try {
         const data = await register(username.value, email.value, password.value)
+        setUser(data.user)
         router.push('/home')
     } catch (e) {
         error.value = e.message

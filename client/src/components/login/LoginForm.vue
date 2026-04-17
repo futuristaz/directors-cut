@@ -4,11 +4,13 @@ import { login } from '@/api/auth.js'
 import InputField from '@/components/shared/InputField.vue'
 import HighlightCta from '../shared/HighlightCta.vue'
 import router from '@/router'
+import { useAuth } from '@/stores/auth'
 
 const email = ref('')
 const password = ref('')
 
 const error = ref('')
+const { setUser } = useAuth()
 
 const handleSubmit = async () => {
     if (!email.value) {
@@ -22,6 +24,7 @@ const handleSubmit = async () => {
 
     try {
         const data = await login(email.value, password.value)
+        setUser(data.user)
         router.push('/home')
     } catch (e) {
         error.value = e.message

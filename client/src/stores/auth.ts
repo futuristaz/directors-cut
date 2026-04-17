@@ -25,6 +25,18 @@ const fetchUser = async () => {
     }
 }
 
+const setUser = (nextUser: User | null) => {
+    user.value = nextUser
+    loading.value = false
+    initialized.value = true
+}
+
+const clearUser = () => {
+    user.value = null
+    loading.value = false
+    initialized.value = true
+}
+
 export const useAuth = () => {
-    return { user, loading, fetchUser }
+    return { user, loading, fetchUser, setUser, clearUser }
 }
