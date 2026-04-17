@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-import { login } from '@/api/auth.js'
+import { login } from '@/api/auth'
 import InputField from '@/components/shared/InputField.vue'
 import HighlightCta from '../shared/HighlightCta.vue'
 import router from '@/router'
