@@ -1,10 +1,10 @@
 <script setup>
 import { ref } from 'vue'
-import { register } from '@/api/auth.js'
+import { register } from '@/api/auth'
 import InputField from '@/components/shared/InputField.vue'
 import HighlightCta from '../shared/HighlightCta.vue'
 import router from '@/router'
-    import { useAuth } from '@/stores/auth'
+import { useAuth } from '@/stores/auth'
 
 const username = ref('')
 const email = ref('')
