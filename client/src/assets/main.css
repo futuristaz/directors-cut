@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  /* Fonts */
+  --font-headline: 'Epilogue', sans-serif;
+  --font-body: 'Manrope', sans-serif;
+  --font-label: 'Inter', sans-serif;
+
+  /* Surfaces */
+  --color-surface: #131313;
+  --color-surface-lowest: #0E0E0E;
+  --color-surface-low: #1C1B1B;
+  --color-surface-container: #201F1F;
+  --color-surface-high: #2A2A2A;
+  --color-surface-bright: #393939;
+
+  /* Primary (Coral/Red) */
+  --color-primary: #FFB4AA;
+  --color-primary-container: #E50914;
+  --color-on-primary: #410001;
+
+  /* Secondary (Gold) */
+  --color-secondary: #FFF9EF;
+  --color-secondary-container: #FFDB3C;
+
+  /* Text */
+  --color-on-surface: #E5E2E1;
+  --color-on-surface-variant: #E9BCB6;
+
+  /* Outline */
+  --color-outline-variant: #5E3F3B;
+
+  --color-error: #FFB4AB;
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.15s ease;
+}
+.fade-enter-from, .fade-leave-to {
+  opacity: 0;
+}
+
+html, body, #app {
+  background-color: #131313;
+}
