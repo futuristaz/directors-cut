@@ -27,7 +27,6 @@ watchEffect(() => {
                 <h1 class="font-headline text-4xl font-black text-primary-container tracking-tighter uppercase mb-2">
                     Not logged in
                 </h1>
-                <p class="text-on-surface-variant font-body">{{ error }}</p>
             </div>
         </div>
     </div>
