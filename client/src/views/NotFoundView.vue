@@ -4,7 +4,7 @@ import HighlightCta from '@/components/shared/HighlightCta.vue';
 </script>
 
 <template>
-    <main class="relative min-h-screen flex items-center justify-center overflow-hidden px-6"> -->
+    <main class="relative min-h-screen flex items-center justify-center overflow-hidden px-6">
         <!-- 404 Content (Asymmetric & High Contrast) -->
         <div class="relative z-20 w-full flex flex-col items-center text-center">
             <!-- Large Dramatic Typography -->
